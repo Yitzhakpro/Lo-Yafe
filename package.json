@@ -1,0 +1,39 @@
+{
+  "name": "lo-yafe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "clean": "shx rm -rf lib/*",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "mocha -r ts-node/register './test/**/*.test.ts'",
+    "prepack": "npm run clean && npm run build"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yitzhakpro/Ze-Gas.git"
+  },
+  "author": "Yitzhak Barzilay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yitzhakpro/Ze-Gas/issues"
+  },
+  "homepage": "https://github.com/Yitzhakpro/Ze-Gas#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.6.1",
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
+    "prettier": "^2.3.0",
+    "shx": "^0.3.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {}
+}
