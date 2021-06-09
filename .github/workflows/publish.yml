@@ -1,4 +1,4 @@
-name: Lo Yafe Publish
+name: Release & Publish
 
 on:
   push:
