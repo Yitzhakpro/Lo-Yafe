@@ -18,6 +18,14 @@
     "type": "git",
     "url": "git+https://github.com/Yitzhakpro/Ze-Gas.git"
   },
+  "keywords": [
+    "curse",
+    "words",
+    "profanity",
+    "filter",
+    "hebrew",
+    "censor"
+  ],
   "author": "Yitzhak Barzilay",
   "license": "MIT",
   "bugs": {
