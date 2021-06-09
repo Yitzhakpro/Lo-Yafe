@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Exit if not on master branch
-        if: endsWith(github.ref, 'main') == false
-        run: exit -1
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -32,9 +29,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Exit if not on master branch
-        if: endsWith(github.ref, 'main') == false
-        run: exit -1
       - name: Setup .npmrc file to publish to npm
         uses: actions/setup-node@v1
         with:
