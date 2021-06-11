@@ -15,22 +15,6 @@ export class Filter {
   constructor(config: FilterConfig = {}) {
     const { replacementSymbol = '*', freshStart = false, extraWords = [], whiteList = [] } = config;
 
-    // data validation
-    if (!replacementSymbol) {
-      throw Error('Provide a replacement symbol');
-    } else if (replacementSymbol.length > 1) {
-      throw Error('Replacement Symbol Needs To Be 1 single character');
-    }
-    if (typeof freshStart !== 'boolean') {
-      throw Error('Fresh start must contain a Boolean (true/false)');
-    }
-    if (!Array.isArray(extraWords)) {
-      throw Error('Extra words must be an array');
-    }
-    if (!Array.isArray(whiteList)) {
-      throw Error('White List must be an array');
-    }
-
     this._replacementSymbol = replacementSymbol;
 
     if (freshStart) {
@@ -52,12 +36,6 @@ export class Filter {
   }
 
   public set replacementSymbol(newReplacementSymbol) {
-    if (!newReplacementSymbol) {
-      throw Error('Provide a replacement symbol');
-    } else if (newReplacementSymbol.length > 1) {
-      throw Error('Replacement Symbol Needs To Be 1 single character');
-    }
-
     this._replacementSymbol = newReplacementSymbol;
   }
 
@@ -102,10 +80,6 @@ export class Filter {
    * @param args - word/s or a spread array of words that will be considered profane
    */
   public addBadWords(...args: string[]) {
-    if (args[0].constructor === Array) {
-      throw Error('args must be word/s or a spread array.');
-    }
-
     this._wordsList.pushElementsIfNotIncluded(args);
   }
 
@@ -115,10 +89,6 @@ export class Filter {
    * @param args - a word or array of words that will be removed(if they exist) from the profane words list
    */
   public addToWhiteList(...args: string[]) {
-    if (args[0].constructor === Array) {
-      throw Error('args must be word/s or a spread array.');
-    }
-
     const filterdList = this._wordsList.filter((badWord) => {
       return args.indexOf(badWord) === -1;
     });
