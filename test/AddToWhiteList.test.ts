@@ -2,18 +2,6 @@ const { expect } = require('chai');
 import HebrewFilter from '../src/index';
 
 describe('Add To White List Function', function () {
-  it('Should only accpet word/s and a spread array', function () {
-    const heFilter = new HebrewFilter();
-
-    // @ts-ignore
-    expect(() => heFilter.addToWhiteList([['test']])).to.throw();
-
-    expect(() => heFilter.addToWhiteList('test')).to.not.throw();
-    expect(() => heFilter.addToWhiteList('test', 'test2', 'test3')).to.not.throw();
-    const testWordsArr = ['test1', 'test2', 'test3'];
-    expect(() => heFilter.addToWhiteList(...testWordsArr)).to.not.throw();
-  });
-
   it('Should remove the new words from the bad words list', function () {
     const heFilter = new HebrewFilter();
     const testWord = 'בדיקה';
