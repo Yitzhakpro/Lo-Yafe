@@ -2,18 +2,6 @@ const { expect } = require('chai');
 import HebrewFilter from '../src/index';
 
 describe('Add Bad Words Function', function () {
-  it('Should only accpet word/s and a spread array', function () {
-    const heFilter = new HebrewFilter();
-
-    // @ts-ignore
-    expect(() => heFilter.addBadWords([['test']])).to.throw();
-
-    expect(() => heFilter.addBadWords('test')).to.not.throw();
-    expect(() => heFilter.addBadWords('test', 'test2', 'test3')).to.not.throw();
-    const testWordsArr = ['test1', 'test2', 'test3'];
-    expect(() => heFilter.addBadWords(...testWordsArr)).to.not.throw();
-  });
-
   it('Should add the new words to the bad words list', function () {
     const heFilter = new HebrewFilter();
     const testWord = 'בדיקה';
